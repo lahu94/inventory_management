@@ -1,0 +1,1207 @@
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sku_code" varchar, "price" integer, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "warehouses"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "warehouses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "wh_code" varchar, "name" varchar, "pincode" integer, "max_apacity" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "warehouses_products"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "warehouses_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "warehouse_id" integer, "item_count" integer, "low_item_threshold" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200623134446)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200623100445),
+(20200623134248);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-06-24 09:24:31.927684"], ["updated_at", "2020-06-24 09:24:31.927684"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "d440ea1ea8153f85b37ff1be54ff9cc3b438d8b6"], ["created_at", "2020-06-24 09:24:31.931580"], ["updated_at", "2020-06-24 09:24:31.931580"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+ProductTest: test_should_not_save_article_without_title
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+ProductTest: test_should_not_save_article_without_title
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_: Product should have many warehouses_products. 
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------
+ProductTest: test_: Product should accepts_nested_attributes_for :warehouses_products. 
+---------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+ProductTest: test_should_not_save_article_without_title
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------
+ProductTest: test_: Product should accepts_nested_attributes_for :warehouses_products. 
+---------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+ProductTest: test_: Product should have many warehouses. 
+---------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_: Product should have many warehouses_products. 
+------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+ProductTest: test_should_not_save_article_without_title
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_should_not_save_product_without_correct_sku_code
+------------------------------------------------------------------
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Iphone 11"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Iphone 11"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Iphone 11"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_should_not_save_product_without_correct_sku_code
+------------------------------------------------------------------
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_should_not_save_product_without_correct_sku_code
+------------------------------------------------------------------
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_should_not_save_product_without_correct_sku_code
+------------------------------------------------------------------
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_should_not_create_duplicate_product_same_sku_code
+-------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (1.8ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-24 10:17:15.355134"], ["updated_at", "2020-06-24 10:17:15.355134"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_should_not_create_duplicate_product_same_sku_code
+-------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-24 10:17:51.185235"], ["updated_at", "2020-06-24 10:17:51.185235"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+ProductTest: test_should_not_create_prodcut_without_name
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+ProductTest: test_should_not_create_prodcut_without_name
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+ProductTest: test_should_not_create_prodcut_without_name
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_should_not_create_duplicate_product_same_sku_code
+-------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-24 10:19:53.657381"], ["updated_at", "2020-06-24 10:19:53.657381"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_: Product should have many warehouses_products. 
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------
+ProductTest: test_: Product should accepts_nested_attributes_for :warehouses_products. 
+---------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_should_not_save_product_without_correct_sku_code
+------------------------------------------------------------------
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+ProductTest: test_: Product should have many warehouses. 
+---------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+ProductTest: test_should_not_create_product_with_alphanumberic_value_as_price
+-----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+ProductTest: test_should_not_create_product_with_alphanumberic_value_as_price
+-----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+ProductTest: test_should_not_create_product_with_alphanumberic_value_as_price
+-----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+WarehoseTest: test_should_not_save_warehouse_without_correct_wh_code
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_correct_wh_code
+---------------------------------------------------------------------
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUM"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUM"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_wh_code_is_more_than_16_character
+--------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAIULHASNAGER421004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_duplicate_warehouse_wh_code_present
+------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (1.7ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 04:53:47.586600"], ["updated_at", "2020-06-25 04:53:47.586600"]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_duplicate_warehouse_wh_code_present
+------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.4ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 04:54:32.313323"], ["updated_at", "2020-06-25 04:54:32.313323"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_pincode_is_alphanumeric
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAIULHASNAGER421004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_pincode/apacity_is_alphanumeric
+------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAIULHASNAGER421004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.5ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 05:15:04.838626"], ["updated_at", "2020-06-25 05:15:04.838626"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+ProductTest: test_should_save_product
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 05:42:03.053096"], ["updated_at", "2020-06-25 05:42:03.053096"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.4ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 05:48:53.379486"], ["updated_at", "2020-06-25 05:48:53.379486"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_pincode/apacity_is_alphanumeric
+------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_wh_code_is_less_than_4_character
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUM"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+WarehouseTest: test_: Warehouse should have many products. 
+-----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+WarehouseTest: test_: Warehouse should have many warehouses_products. 
+----------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_duplicate_warehouse_wh_code_present
+------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.4ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 05:48:53.422906"], ["updated_at", "2020-06-25 05:48:53.422906"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------------------
+WarehouseTest: test_#threshold_cross_method_should_provide_value_wheter_warehouse_product_crossed_the_thro
+----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 05:48:53.430110"], ["updated_at", "2020-06-25 05:48:53.430110"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 05:48:53.442090"], ["updated_at", "2020-06-25 05:48:53.442090"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 05:48:53.462778"], ["updated_at", "2020-06-25 05:48:53.462778"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWarehousesProduct Load (0.2ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."warehouse_id" = ? AND "warehouses_products"."product_id" = ? AND "warehouses_products"."warehouse_id" = ? ORDER BY "warehouses_products"."id" ASC LIMIT ?[0m  [["warehouse_id", 1], ["product_id", 1], ["warehouse_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_wh_code_is_more_than_16_character
+--------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAIULHASNAGER421004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------------------
+WarehouseTest: test_#threshold_cross_method_should_provide_value_wheter_warehouse_product_crossed_the_thro
+----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.6ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 05:49:04.468037"], ["updated_at", "2020-06-25 05:49:04.468037"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 05:49:04.486921"], ["updated_at", "2020-06-25 05:49:04.486921"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 05:49:04.512711"], ["updated_at", "2020-06-25 05:49:04.512711"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWarehousesProduct Load (0.2ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."warehouse_id" = ? AND "warehouses_products"."product_id" = ? AND "warehouses_products"."warehouse_id" = ? ORDER BY "warehouses_products"."id" ASC LIMIT ?[0m  [["warehouse_id", 1], ["product_id", 1], ["warehouse_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+WarehousesProductTest: test_: WarehousesProduct should belong to product. 
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------------
+WarehousesProductTest: test_Should_not_warehouses_product_if_item_count/low_item_threshold_are_alphanumeric
+-----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.8ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 05:59:45.773122"], ["updated_at", "2020-06-25 05:59:45.773122"]]
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 05:59:45.787914"], ["updated_at", "2020-06-25 05:59:45.787914"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+WarehousesProductTest: test_: WarehousesProduct should belong to warehouse. 
+----------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------------
+WarehousesProductTest: test_Should_not_warehouses_product_if_item_count/low_item_threshold_are_alphanumeric
+-----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.4ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:00:31.455743"], ["updated_at", "2020-06-25 06:00:31.455743"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:00:31.468201"], ["updated_at", "2020-06-25 06:00:31.468201"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+WarehousesProductTest: test_Should_warehouses_product
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:00:31.505025"], ["updated_at", "2020-06-25 06:00:31.505025"]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:00:31.508347"], ["updated_at", "2020-06-25 06:00:31.508347"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:00:31.511010"], ["updated_at", "2020-06-25 06:00:31.511010"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+WarehousesProductTest: test_: WarehousesProduct should belong to product. 
+--------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+WarehousesProductTest: test_: WarehousesProduct should belong to warehouse. 
+----------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.7ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:50:42.915673"], ["updated_at", "2020-06-25 06:50:42.915673"]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:50:42.930910"], ["updated_at", "2020-06-25 06:50:42.930910"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:50:42.959666"], ["updated_at", "2020-06-25 06:50:42.959666"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.6ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:50:59.715853"], ["updated_at", "2020-06-25 06:50:59.715853"]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:50:59.734178"], ["updated_at", "2020-06-25 06:50:59.734178"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.3ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:50:59.761795"], ["updated_at", "2020-06-25 06:50:59.761795"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.9ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:51:10.729146"], ["updated_at", "2020-06-25 06:51:10.729146"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:51:10.747939"], ["updated_at", "2020-06-25 06:51:10.747939"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:51:10.769459"], ["updated_at", "2020-06-25 06:51:10.769459"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.5ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:52:00.840582"], ["updated_at", "2020-06-25 06:52:00.840582"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:52:00.854350"], ["updated_at", "2020-06-25 06:52:00.854350"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:52:00.875710"], ["updated_at", "2020-06-25 06:52:00.875710"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.6ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:56:51.390971"], ["updated_at", "2020-06-25 06:56:51.390971"]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:56:51.405920"], ["updated_at", "2020-06-25 06:56:51.405920"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:56:51.431318"], ["updated_at", "2020-06-25 06:56:51.431318"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.9ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:57:26.336947"], ["updated_at", "2020-06-25 06:57:26.336947"]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:57:26.355089"], ["updated_at", "2020-06-25 06:57:26.355089"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:57:26.381285"], ["updated_at", "2020-06-25 06:57:26.381285"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.4ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:57:46.788411"], ["updated_at", "2020-06-25 06:57:46.788411"]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:57:46.808335"], ["updated_at", "2020-06-25 06:57:46.808335"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:57:46.829497"], ["updated_at", "2020-06-25 06:57:46.829497"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.5ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 06:58:16.506445"], ["updated_at", "2020-06-25 06:58:16.506445"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 06:58:16.523479"], ["updated_at", "2020-06-25 06:58:16.523479"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.2ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 06:58:16.556678"], ["updated_at", "2020-06-25 06:58:16.556678"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.7ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 07:00:17.524771"], ["updated_at", "2020-06-25 07:00:17.524771"]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 07:00:17.538249"], ["updated_at", "2020-06-25 07:00:17.538249"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 07:00:17.562309"], ["updated_at", "2020-06-25 07:00:17.562309"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/products/1" for 127.0.0.1 at 2020-06-25 12:30:17 +0530
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"warehouses_products_attributes"=>{"item_count"=>"12", "low_item_threshold"=>"14", "id"=>"1", "product_id"=>"1", "warehouse_id"=>"1"}}, "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehousesProduct Load (0.2ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."product_id" = ? AND "warehouses_products"."id" = ?[0m  [["product_id", 1], ["id", 1]]
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? AND "products"."id" != ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Update (0.2ms)[0m  [1m[33mUPDATE "warehouses_products" SET "item_count" = ?, "low_item_threshold" = ?, "updated_at" = ? WHERE "warehouses_products"."id" = ?[0m  [["item_count", 12], ["low_item_threshold", 14], ["updated_at", "2020-06-25 07:00:17.607168"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 20ms (ActiveRecord: 0.9ms | Allocations: 4719)
+  [1m[36mWarehousesProduct Load (0.1ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Load (0.1ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+WarehousesControllerTest: test_should_create_Warehouse
+------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+WarehousesControllerTest: test_should_create_Warehouse
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "warehouses"[0m
+Started POST "/warehouses" for 127.0.0.1 at 2020-06-25 12:35:39 +0530
+Processing by WarehousesController#create as HTML
+  Parameters: {"warehouse"=>{"wh_code"=>"MUMBAI004", "name"=>"Mumbai", "pincode"=>"421004", "max_apacity"=>"200"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.7ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 07:05:39.061582"], ["updated_at", "2020-06-25 07:05:39.061582"]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 20ms (ActiveRecord: 2.1ms | Allocations: 9044)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+WarehousesControllerTest: test_should_create_Warehouse
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "warehouses"[0m
+Started POST "/warehouses" for 127.0.0.1 at 2020-06-25 12:35:47 +0530
+Processing by WarehousesController#create as HTML
+  Parameters: {"warehouse"=>{"wh_code"=>"MUMBAI004", "name"=>"Mumbai", "pincode"=>"421004", "max_apacity"=>"200"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.4ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 07:05:47.396298"], ["updated_at", "2020-06-25 07:05:47.396298"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 28ms (ActiveRecord: 1.6ms | Allocations: 9046)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.6ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-25 07:07:18.310629"], ["updated_at", "2020-06-25 07:07:18.310629"]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-25 07:07:18.324735"], ["updated_at", "2020-06-25 07:07:18.324735"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-25 07:07:18.350073"], ["updated_at", "2020-06-25 07:07:18.350073"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/products/1" for 127.0.0.1 at 2020-06-25 12:37:18 +0530
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"warehouses_products_attributes"=>{"item_count"=>"12", "low_item_threshold"=>"14", "id"=>"1", "product_id"=>"1", "warehouse_id"=>"1"}}, "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehousesProduct Load (0.1ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."product_id" = ? AND "warehouses_products"."id" = ?[0m  [["product_id", 1], ["id", 1]]
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? AND "products"."id" != ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Update (0.2ms)[0m  [1m[33mUPDATE "warehouses_products" SET "item_count" = ?, "low_item_threshold" = ?, "updated_at" = ? WHERE "warehouses_products"."id" = ?[0m  [["item_count", 12], ["low_item_threshold", 14], ["updated_at", "2020-06-25 07:07:18.382711"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 19ms (ActiveRecord: 0.8ms | Allocations: 4736)
+  [1m[36mWarehousesProduct Load (0.2ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Load (0.2ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+WarehousesProductTest: test_Should_warehouses_product
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (3.9ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-26 05:47:32.930770"], ["updated_at", "2020-06-26 05:47:32.930770"]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-26 05:47:32.962395"], ["updated_at", "2020-06-26 05:47:32.962395"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-26 05:47:32.995896"], ["updated_at", "2020-06-26 05:47:32.995896"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+WarehousesProductTest: test_: WarehousesProduct should belong to product. 
+--------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+WarehousesProductTest: test_: WarehousesProduct should belong to warehouse. 
+----------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------------
+WarehousesProductTest: test_Should_not_warehouses_product_if_item_count/low_item_threshold_are_alphanumeric
+-----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.4ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-26 05:47:33.002072"], ["updated_at", "2020-06-26 05:47:33.002072"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-26 05:47:33.005185"], ["updated_at", "2020-06-26 05:47:33.005185"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------------------
+WarehouseTest: test_#threshold_cross_method_should_provide_value_wheter_warehouse_product_crossed_the_thro
+----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-26 05:47:33.025187"], ["updated_at", "2020-06-26 05:47:33.025187"]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-26 05:47:33.028493"], ["updated_at", "2020-06-26 05:47:33.028493"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-26 05:47:33.031308"], ["updated_at", "2020-06-26 05:47:33.031308"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWarehousesProduct Load (0.2ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."warehouse_id" = ? AND "warehouses_products"."product_id" = ? AND "warehouses_products"."warehouse_id" = ? ORDER BY "warehouses_products"."id" ASC LIMIT ?[0m  [["warehouse_id", 1], ["product_id", 1], ["warehouse_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_wh_code_is_less_than_4_character
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUM"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+WarehouseTest: test_: Warehouse should have many warehouses_products. 
+----------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_pincode/apacity_is_alphanumeric
+------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+WarehouseTest: test_: Warehouse should have many products. 
+-----------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_duplicate_warehouse_wh_code_present
+------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-26 05:47:33.052588"], ["updated_at", "2020-06-26 05:47:33.052588"]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (6.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_if_warehouse_wh_code_is_more_than_16_character
+--------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAIULHASNAGER421004"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.5ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-26 05:47:33.074326"], ["updated_at", "2020-06-26 05:47:33.074326"]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+ProductTest: test_should_save_product
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-26 05:47:33.080153"], ["updated_at", "2020-06-26 05:47:33.080153"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------
+ProductTest: test_: Product should accepts_nested_attributes_for :warehouses_products. 
+---------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_should_not_save_product_without_correct_sku_code
+------------------------------------------------------------------
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB10000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProductTest: test_: Product should have many warehouses_products. 
+------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+ProductTest: test_: Product should have many warehouses. 
+---------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_should_not_create_duplicate_product_same_sku_code
+-------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-26 05:47:33.091695"], ["updated_at", "2020-06-26 05:47:33.091695"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+ProductTest: test_should_not_create_product_with_alphanumberic_value_as_price
+-----------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+ProductTest: test_should_not_create_prodcut_without_name
+--------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProductsControllerTest: test_should_create_Product
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-26 05:47:33.132216"], ["updated_at", "2020-06-26 05:47:33.132216"]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("sku_code", "price", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["sku_code", "MUMB1002"], ["price", 1234], ["name", "Iphone 11"], ["created_at", "2020-06-26 05:47:33.134731"], ["updated_at", "2020-06-26 05:47:33.134731"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Load (0.0ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "warehouses_products" ("product_id", "warehouse_id", "item_count", "low_item_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["warehouse_id", 1], ["item_count", 10], ["low_item_threshold", 12], ["created_at", "2020-06-26 05:47:33.137302"], ["updated_at", "2020-06-26 05:47:33.137302"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/products/1" for 127.0.0.1 at 2020-06-26 11:17:33 +0530
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"warehouses_products_attributes"=>{"item_count"=>"12", "low_item_threshold"=>"14", "id"=>"1", "product_id"=>"1", "warehouse_id"=>"1"}}, "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehousesProduct Load (0.1ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."product_id" = ? AND "warehouses_products"."id" = ?[0m  [["product_id", 1], ["id", 1]]
+  [1m[36mWarehouse Load (0.1ms)[0m  [1m[34mSELECT "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."sku_code" = ? AND "products"."id" != ? LIMIT ?[0m  [["sku_code", "MUMB1002"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Update (0.1ms)[0m  [1m[33mUPDATE "warehouses_products" SET "item_count" = ?, "low_item_threshold" = ?, "updated_at" = ? WHERE "warehouses_products"."id" = ?[0m  [["item_count", 12], ["low_item_threshold", 14], ["updated_at", "2020-06-26 05:47:33.176131"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 14ms (ActiveRecord: 0.7ms | Allocations: 2601)
+  [1m[36mWarehousesProduct Load (0.1ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWarehousesProduct Load (0.0ms)[0m  [1m[34mSELECT "warehouses_products".* FROM "warehouses_products" WHERE "warehouses_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+WarehousesControllerTest: test_should_create_Warehouse
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "warehouses"[0m
+Started POST "/warehouses" for 127.0.0.1 at 2020-06-26 11:17:33 +0530
+Processing by WarehousesController#create as HTML
+  Parameters: {"warehouse"=>{"wh_code"=>"MUMBAI004", "name"=>"Mumbai", "pincode"=>"421004", "max_apacity"=>"200"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWarehouse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "warehouses" WHERE "warehouses"."wh_code" = ? LIMIT ?[0m  [["wh_code", "MUMBAI004"], ["LIMIT", 1]]
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO "warehouses" ("wh_code", "name", "pincode", "max_apacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wh_code", "MUMBAI004"], ["name", "Mumbai"], ["pincode", 421004], ["max_apacity", 200], ["created_at", "2020-06-26 05:47:33.195465"], ["updated_at", "2020-06-26 05:47:33.195465"]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1263)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m

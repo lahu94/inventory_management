@@ -1,0 +1,35 @@
+<%= form_with model: @product, local: true do |form| %>
+
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@product.errors.count, "error") %> prohibited
+        this product from being saved:
+      </h2>
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p>
+    sku code: <%= @product.sku_code%>
+  </p>
+
+  <p>
+    Product Name: <%= @product.name %>
+  </p>
+  <% @warehouses_products.each do |wp| %>
+    <%= form.fields_for :warehouses_products, wp do |f| %>
+      <%= render "warehouse_product_details", f: f, wp: wp%>
+    <% end %>
+  <% end %>  
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', products_path %>

@@ -1,0 +1,23 @@
+<h1>Listing Products</h1>
+
+<table>
+  <tr>
+    <th>SKU Code</th></br>
+    <th>Product Name</th></br>
+    <th>Price</th>
+    <% @warehouses.each do |warehouse| %>
+      <th> <%= warehouse.name %> </th>
+    <% end %> 
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= link_to product.sku_code, edit_product_path(product.id) %></td>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <% @warehouses.each do |warehouse| %>
+        <td class="<%= warehouse.threshold_cross(product.id) ? "threshold_cross" : ''%>"> <%= warehouse.warehouse_product_details(product.id).item_count %> </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

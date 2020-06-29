@@ -1,0 +1,14 @@
+<p>
+  <%= wp.warehouse.name %> Warehouse
+</p>
+<p>
+  <%= f.label :item_count %><br>
+  <%= f.number_field :item_count, value: wp.item_count%>
+</p>
+<p>
+  <%= f.label :low_item_threshold %><br>
+  <%= f.number_field :low_item_threshold, value: wp.low_item_threshold %>
+</p>
+<%= f.hidden_field :id, value: wp.id%>
+<%= f.hidden_field :product_id, value: wp.product_id %>
+<%= f.hidden_field :warehouse_id, value: wp.warehouse_id%>
